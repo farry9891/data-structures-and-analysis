@@ -3,23 +3,23 @@
 using namespace std;
 
 int main() {
-    int nums[] = {2, 5, 8, 12, 16, 23, 38, 56, 72, 91};
-    int len = sizeof(nums) / sizeof(nums[0]);
-    int key = 23;
+    int nums[]= {2, 5, 8, 12, 16, 23, 38, 56, 72, 91};
+    int len= sizeof(nums) / sizeof(nums[0]);
+    int key= 23;
 
-    int left = 0, right = len - 1;
-    int index = -1;
+    int left= 0, right= len - 1;
+    int index= -1;
 
     while (left <= right) {
-        int center = left + (right - left) / 2;
+        int center= left + (right - left) / 2;
 
         if (nums[center] == key) {
-            index = center;
+            index= center;
             break;
         } else if (nums[center] < key) {
-            left = center + 1;
+            left= center + 1;
         } else {
-            right = center - 1;
+            right= center - 1;
         }
     }
 
@@ -37,13 +37,13 @@ int main() {
 using namespace std;
 
 void combine(int data[], int low, int mid, int high) {
-    int sizeA = mid - low + 1;
-    int sizeB = high - mid;
+    int sizeA= mid - low + 1;
+    int sizeB= high - mid;
 
     int first[sizeA], second[sizeB];
 
-    for (int i = 0; i < sizeA; i++) first[i] = data[low + i];
-    for (int j = 0; j < sizeB; j++) second[j] = data[mid + 1 + j];
+    for (int i= 0; i < sizeA; i++) first[i] = data[low + i];
+    for (int j= 0; j < sizeB; j++) second[j] = data[mid + 1 + j];
 
     int i = 0, j = 0, k = low;
 
@@ -51,7 +51,7 @@ void combine(int data[], int low, int mid, int high) {
         if (first[i] <= second[j]) {
             data[k++] = first[i++];
         } else {
-            data[k++] = second[j++];
+            data[k++]= second[j++];
         }
     }
 
@@ -69,12 +69,12 @@ void mergeAlgo(int data[], int low, int high) {
 }
 
 void show(int data[], int size) {
-    for (int i = 0; i < size; i++) cout << data[i] << " ";
+    for (int i= 0; i < size; i++) cout << data[i] << " ";
     cout << endl;
 }
 
 int main() {
-    int list1[] = {12, 11, 13, 5, 6, 7};
+    int list1[]= {12, 11, 13, 5, 6, 7};
     int n1 = sizeof(list1) / sizeof(list1[0]);
     mergeAlgo(list1, 0, n1 - 1);
     show(list1, n1);
